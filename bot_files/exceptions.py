@@ -1,0 +1,3 @@
+
+class AlreadyExistsError(Exception):
+    pass
