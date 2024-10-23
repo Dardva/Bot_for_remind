@@ -165,12 +165,11 @@ def boss_check(chat):
 
 def start_keyboard():
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    button_animal = types.KeyboardButton('/newanimal')  # check
-    button_for_groups = types.KeyboardButton('/groups')  # check
-    button_add_group = types.KeyboardButton('/newgroup')  # check
-    button_for_me = types.KeyboardButton('/notes')  # in work
-    button_help = types.KeyboardButton('/help')  # check
-    button_requests = types.KeyboardButton('/group_requests')  # check
+    button_animal = types.KeyboardButton('/newanimal')
+    button_for_groups = types.KeyboardButton('/groups')
+    button_for_me = types.KeyboardButton('/notes')
+    button_help = types.KeyboardButton('/help')
+    button_requests = types.KeyboardButton('/group_requests')
     keyboard.add(button_add_group, button_for_groups,
                  button_for_me, button_requests,
                  button_animal, button_help, row_width=3)
@@ -220,7 +219,7 @@ def new_animal(message):
     bot.send_photo(chat.id, get_new_image())
 
 
-@bot.message_handler(commands=['groups'])  # check
+@bot.message_handler(commands=['groups'])
 def groups(message, page=1, previous_message=None):
     chat = message.chat
     groups_dict = take_groups(chat)
@@ -359,11 +358,11 @@ def notes(message, page=1, previous_message=None, group_id=None):
             left = page-1 if page != 1 else pages_count
             right = page+1 if page != pages_count else 1
             left_button = types.InlineKeyboardButton(
-                "←", callback_data=f'to {left} notes')  # check
+                "←", callback_data=f'to {left} notes')
             page_button = types.InlineKeyboardButton(
-                f"{str(page)}/{str(len(groups))}", callback_data='_')  # check
+                f"{str(page)}/{str(len(groups))}", callback_data='_')
             right_button = types.InlineKeyboardButton(
-                "→", callback_data=f'to {right} notes')  # check
+                "→", callback_data=f'to {right} notes')
             buttons.add(left_button, page_button, right_button)
             if notes_num[page][4] or notes_num[page][5] == user['id']:
                 change_button = types.InlineKeyboardButton(
@@ -391,7 +390,7 @@ def notes(message, page=1, previous_message=None, group_id=None):
         pass
 
 
-def members(message, page=1, previous_message=None, group_id=None):  # check
+def members(message, page=1, previous_message=None, group_id=None):
     chat = message.chat
     try:
         cursor.execute(
@@ -613,7 +612,7 @@ def make_owner(message, group_id, user_id_t,
     groups(message, previous_message=previous_message)
 
 
-def member_info(message, previous_message, group_id, user_id_t):  # check
+def member_info(message, previous_message, group_id, user_id_t):
     chat = message.chat
     try:
         cursor.execute(
