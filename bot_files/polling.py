@@ -170,8 +170,7 @@ def start_keyboard():
     button_for_me = types.KeyboardButton('/notes')
     button_help = types.KeyboardButton('/help')
     button_requests = types.KeyboardButton('/group_requests')
-    keyboard.add(button_add_group, button_for_groups,
-                 button_for_me, button_requests,
+    keyboard.add(button_for_groups, button_for_me, button_requests,
                  button_animal, button_help, row_width=3)
     return keyboard
 
