@@ -33,15 +33,12 @@
 
 2. В чате с ботом используйте команды для управления заметками.
 
-## Поддерживаемые пакеты
+## Стек технологий
 
-- `certifi==2024.8.30`
-- `charset-normalizer==3.3.2`
-- `idna==3.8`
-- `pyTelegramBotAPI==4.22.1`
-- `python-dotenv==1.0.1`
-- `requests==2.32.3`
-- `urllib3==2.2.2`
+- `Python`
+- `pyTelegramBotAPI`
+- `dotenv`
+- `SQlite`
 
 
 ## Визуализация
